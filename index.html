@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Beautiful Wife ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #7a173b;
+    padding: 20px;
+}
+
+/* Floating Hearts */
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main Card */
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(150, 30, 70, 0.2);
+    border: 2px solid rgba(255,255,255,0.7);
+    position: relative;
+    z-index: 2;
+}
+
+.main-heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin: 15px 0;
+    color: #d6336c;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #9b4161;
+}
+
+/* Buttons */
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.love-btn {
+    border: none;
+    padding: 17px 10px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ff6b95, #ff3d77);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 61, 119, 0.25);
+    transition: 0.3s;
+}
+
+.love-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(255, 61, 119, 0.4);
+}
+
+.love-btn:active {
+    transform: scale(0.95);
+}
+
+/* Funny Message */
+
+.message-box {
+    display: none;
+    margin-top: 25px;
+    padding: 22px 15px;
+    background: #fff0f5;
+    border: 2px dashed #ff8bb0;
+    border-radius: 20px;
+    animation: popIn 0.4s ease;
+}
+
+.message-box.show {
+    display: block;
+}
+
+.message-box h2 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: #e83e70;
+}
+
+.message-box p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #b65b7c;
+}
+
+/* Mobile */
+
+@media (max-width: 380px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .love-btn {
+        font-size: 13px;
+        padding: 15px 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+
+<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+<div class="heart" style="left:25%; animation-delay:2s;">💖</div>
+<div class="heart" style="left:70%; animation-delay:1s;">💕</div>
+<div class="heart" style="left:90%; animation-delay:3s;">💗</div>
+<div class="heart" style="left:45%; animation-delay:4s;">💘</div>
+
+<!-- Audio File -->
+
+<audio id="prankSound" preload="auto">
+    <source src="prank.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Main Website -->
+
+<div class="container">
+
+    <div class="main-heart">❤️</div>
+
+    <h1>Hey My Love!</h1>
+
+    <p class="subtitle">
+        I made something special just for you... 🥰<br>
+        Choose any button below to discover<br>
+        how much I love you!
+    </p>
+
+    <!-- All Buttons -->
+
+    <div class="buttons">
+
+        <button class="love-btn" onclick="showPrank(0)">
+            My Love 💕
+        </button>
+
+        <button class="love-btn" onclick="showPrank(1)">
+            Open My Heart 💌
+        </button>
+
+        <button class="love-btn" onclick="showPrank(2)">
+            Secret Message 🤫
+        </button>
+
+        <button class="love-btn" onclick="showPrank(3)">
+            Kiss Me 😘
+        </button>
+
+        <button class="love-btn" onclick="showPrank(4)">
+            Surprise 🎁
+        </button>
+
+        <button class="love-btn" onclick="showPrank(5)">
+            Forever Yours 💍
+        </button>
+
+    </div>
+
+    <!-- Funny Message Box -->
+
+    <div class="message-box" id="messageBox">
+
+        <h2 id="messageTitle"></h2>
+
+        <p id="messageText"></p>
+
+    </div>
+
+    <div class="footer">
+        Made with endless love ❤️<br>
+        Only for my beautiful wife!
+    </div>
+
+</div>
+
+<script>
+
+/* Funny Messages */
+
+const messages = [
+
+    {
+        title: "Caught You! 😂",
+        text: "You thought this was a romantic button? Haha! You're officially my favorite victim! 🤣"
+    },
+
+    {
+        title: "Breaking News! 📰",
+        text: "Your husband has been diagnosed with a serious case of LOVING YOU TOO MUCH! No cure available! ❤️"
+    },
+
+    {
+        title: "Secret Revealed! 🤫",
+        text: "The secret is... I ate the last piece of chocolate! Please don't kill me! 🍫😂"
+    },
+
+    {
+        title: "Kiss Loading... 😘",
+        text: "Error 404! Kiss not found! Please come closer and try again! 💋"
+    },
+
+    {
+        title: "Surprise! 🎉",
+        text: "Congratulations! You just won 1 million imaginary hugs from your husband! 🤗"
+    },
+
+    {
+        title: "Forever Yours! 💍",
+        text: "Terms and conditions: You are stuck with me forever. No refunds, no exchanges! 😂❤️"
+    }
+
+];
+
+/* Button Function */
+
+function showPrank(index) {
+
+    const audio = document.getElementById("prankSound");
+
+    /* Same sound for every button */
+
+    audio.pause();
+    audio.currentTime = 0;
+
+    audio.play().catch(function(error) {
+        console.log("Audio playback failed:", error);
+    });
+
+    /* Display Funny Message */
+
+    document.getElementById("messageTitle").textContent =
+        messages[index].title;
+
+    document.getElementById("messageText").textContent =
+        messages[index].text;
+
+    const box = document.getElementById("messageBox");
+
+    box.classList.remove("show");
+
+    /* Restart Animation */
+
+    void box.offsetWidth;
+
+    box.classList.add("show");
+
+}
+
+</script>
+
+</body>
+  </html>
+    
